@@ -1,10 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
-const heading = React.createElement(
-  "h1",
-  { className: "hitme" },
-  "Hey! this is used by React CDN link this is save check "
-);
-// console.log(heading);
+import ReactDOM from "react-dom/client";
+
+const Y = () => {
+  return <div className="h1">This is Kinshuk</div>;
+};
+const z = <h1>I am text inside Y</h1>;
+const X = () => {
+  return (
+    <Y>
+    </Y>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<X />);
