@@ -19,6 +19,10 @@
   padding: 5px;
 }
 
+.Header-list > li:hover {
+  cursor: pointer;
+}
+
 /* card */
 .card {
   width: 130;
