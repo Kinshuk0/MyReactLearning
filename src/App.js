@@ -2,11 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  useParams,
+} from "react-router-dom";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
+import Restaurant from "./Components/Restaurant";
 const AppLayout = () => {
+  let { id } = useParams();
   return (
     <div>
       <Header />
@@ -33,6 +40,10 @@ const appRouter = createBrowserRouter([
       {
         path: "Contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: ":id",
+        element: <Restaurant></Restaurant>,
       },
     ],
   },
