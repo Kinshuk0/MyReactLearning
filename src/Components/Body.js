@@ -2,11 +2,13 @@ import Card from "./Card";
 import obj from "../utils/obj";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
+import Offline from "./Offline";
 const Body = () => {
   const [list, setList] = useState(obj);
   const [search, setSearch] = useState("");
   const [filterlist, setfilterlist] = useState([]);
+  let online = useOnlineStatus();
   const fetchdata = async () => {
     const res = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -57,7 +59,9 @@ const Body = () => {
     });
     setfilterlist(newFilterList);
   };
-  return (
+  return !online ? (
+    <Offline />
+  ) : (
     <div className="Body-Container">
       <input
         alt="search"

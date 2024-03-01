@@ -8,7 +8,7 @@ import {
   RouterProvider,
   useParams,
 } from "react-router-dom";
-import About from "./Components/About";
+import About from "./Components/About"; 
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import Restaurant from "./Components/Restaurant";
