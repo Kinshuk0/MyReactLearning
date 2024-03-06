@@ -62,7 +62,7 @@ const Body = () => {
   return !online ? (
     <Offline />
   ) : (
-    <div className="Body-Container">
+    <div className="flex flex-wrap">
       <input
         alt="search"
         className="search-bar"
@@ -81,7 +81,7 @@ const Body = () => {
         {" "}
         Go{" "}
       </button>
-      <div className="Res-container">
+      <div className="flex flex-wrap">
         {list?.map((object, index) => (
           <Link to="/1" key={object.info.id}>
             <Card {...object} />
